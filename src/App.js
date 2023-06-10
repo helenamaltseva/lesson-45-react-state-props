@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BsCloudSun } from "react-icons/bs";
+
+//container
+import WeatherGrid from "./container/WeatherGrid";
+
+//components
+import WeatherCard from "./components/WeatherCard";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <WeatherGrid>
+        <WeatherCard
+          title="Lisbon"
+          temperature="21°C"
+          icon={<BsCloudSun/>}
+          color="red"
+          // className="lsn-weather-card_color-red" 
+        />
+        <WeatherCard
+          title="Lisbon"
+          temperature="21°C"
+          icon={<BsCloudSun/>}
+          color="orange" 
+        />
+        <WeatherCard
+          title="Lisbon"
+          temperature="21°C"
+          icon={<BsCloudSun/>}
+          className="lsn-weather-card_color-pink" 
+        />
+      </WeatherGrid>
     </div>
   );
 }
 
-export default App;
+export default App; 
